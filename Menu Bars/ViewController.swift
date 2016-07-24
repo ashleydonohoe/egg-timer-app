@@ -23,11 +23,6 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
-    @IBAction func buttonPressed(_ sender: AnyObject) {
-        timer.invalidate()
-        print("Timer Stopped")
-    }
     
     func processTimer() {
         seconds += 1
@@ -36,10 +31,13 @@ class ViewController: UIViewController {
     
     
     @IBAction func removeTen(_ sender: AnyObject) {
-        
+        seconds -= 10
+        timerLabel.text = String(seconds)
     }
     
     @IBAction func addTen(_ sender: AnyObject) {
+        seconds += 10
+        timerLabel.text = String(seconds)
         
     }
     
