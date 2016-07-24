@@ -25,8 +25,10 @@ class ViewController: UIViewController {
     }
     
     func processTimer() {
-        seconds += 1
-        timerLabel.text = String(seconds)
+        if seconds >= 1 {
+            seconds -= 1
+            timerLabel.text = String(seconds)
+        }
     }
     
     
