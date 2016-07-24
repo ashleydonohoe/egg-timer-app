@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  Menu Bars
+//  Egg Timer
 //
 //  Created by Gabriele on 7/23/16.
 //  Copyright © 2016 Ashley Donohoe. All rights reserved.
@@ -31,8 +31,10 @@ class ViewController: UIViewController {
     
     
     @IBAction func removeTen(_ sender: AnyObject) {
-        seconds -= 10
-        timerLabel.text = String(seconds)
+        if seconds >= 10 {
+            seconds -= 10
+            timerLabel.text = String(seconds)
+        }
     }
     
     @IBAction func addTen(_ sender: AnyObject) {
@@ -53,6 +55,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func pauseTimer(_ sender: AnyObject) {
+        timer.invalidate()
         
     }
 }
